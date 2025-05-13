@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manteniment de Perifèrics - CFGM</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .peripheral-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        .progress-bar {
+            transition: width 0.5s ease-in-out;
+        }
+        #quiz-feedback {
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 font-sans">
+    <!-- Capçalera -->
+    <header class="bg-blue-600 text-white shadow-lg">
+        <div class="container mx-auto px-4 py-6">
+            <div class="flex justify-between items-center">
+                <div>
+                    <h1 class="text-3xl font-bold">Manteniment de Perifèrics</h1>
+                    <p class="mt-2">Cicle Formatiu de Grau Mitjà Sistemes Microinformàtics i Xarxes</p>
+                </div>
+                <div class="hidden md:block">
+                    <i class="fas fa-laptop-medical text-4xl"></i>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navegació -->
+    <nav class="bg-blue-700 text-white">
+        <div class="container mx-auto px-4">
+            <ul class="flex overflow-x-auto py-3 space-x-6">
+                <li><a href="#intro" class="hover:bg-blue-600 px-3 py-2 rounded transition">Introducció</a></li>
+                <li><a href="#tipus" class="hover:bg-blue-600 px-3 py-2 rounded transition">Tipus de Perifèrics</a></li>
+                <li><a href="#manteniment" class="hover:bg-blue-600 px-3 py-2 rounded transition">Manteniment</a></li>
+                <li><a href="#exemple" class="hover:bg-blue-600 px-3 py-2 rounded transition">Exemple Pràctic</a></li>
+                <li><a href="#exercici" class="hover:bg-blue-600 px-3 py-2 rounded transition">Exercici</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Contingut principal -->
+    <main class="container mx-auto px-4 py-8">
+        <!-- Secció Introducció -->
+        <section id="intro" class="mb-12 bg-white p-6 rounded-lg shadow-md">
+            <h2 class="text-2xl font-bold text-blue-700 mb-4">Introducció</h2>
+            <div class="grid md:grid-cols-2 gap-6">
+                <div>
+                    <p class="mb-4">Els dispositius perifèrics són components externs que connectem als nostres ordinadors per ampliar les seves funcionalitats. El seu correcte manteniment és essencial per garantir el bon funcionament del sistema.</p>
+                    <p>En aquest mòdul aprendrem:</p>
+                    <ul class="list-disc pl-6 mt-2 space-y-1">
+                        <li>Tipus principals de perifèrics</li>
+                        <li>Problemes comuns i les seves solucions</li>
+                        <li>Tècniques bàsiques de manteniment</li>
+                        <li>Eines necessàries per a la reparació</li>
+                    </ul>
+                </div>
+                <div class="flex items-center justify-center">
+                    <img src="https://images.unsplash.com/photo-1593642632823-8f785ba67e45?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" alt="Equip informàtic" class="rounded-lg shadow-md w-full max-w-md">
+                </div>
+            </div>
+        </section>
+
+        <!-- Secció Tipus de Perifèrics -->
+        <section id="tipus" class="mb-12">
+            <h2 class="text-2xl font-bold text-blue-700 mb-6">Tipus de Perifèrics</h2>
+            <div class="grid md:grid-cols-3 gap-6">
+                <!-- Teclat -->
+                <div class="peripheral-card bg-white p-6 rounded-lg shadow-md transition cursor-pointer border-l-4 border-blue-500">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-keyboard text-3xl text-blue-600 mr-3"></i>
+                        <h3 class="text-xl font-semibold">Teclats</h3>
+                    </div>
+                    <p class="text-gray-600 mb-3">Dispositiu d'entrada per introduir text i ordres. Problemes comuns: tecles que no funcionen, connexió intermitent.</p>
+                    <div class="flex justify-between text-sm text-gray-500">
+                        <span>Freqüència d'ús: <span class="font-medium">Alta</span></span>
+                        <span>Dificultat: <span class="font-medium">Baixa</span></span>
+                    </div>
+                </div>
+
+                <!-- Ratolí -->
+                <div class="peripheral-card bg-white p-6 rounded-lg shadow-md transition cursor-pointer border-l-4 border-green-500">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-mouse text-3xl text-green-600 mr-3"></i>
+                        <h3 class="text-xl font-semibold">Ratolins</h3>
+                    </div>
+                    <p class="text-gray-600 mb-3">Dispositiu apuntador. Problemes: sensor brut, botons que no responen, cable danyat.</p>
+                    <div class="flex justify-between text-sm text-gray-500">
+                        <span>Freqüència d'ús: <span class="font-medium">Alta</span></span>
+                        <span>Dificultat: <span class="font-medium">Baixa</span></span>
+                    </div>
+                </div>
+
+                <!-- Impressora -->
+                <div class="peripheral-card bg-white p-6 rounded-lg shadow-md transition cursor-pointer border-l-4 border-purple-500">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-print text-3xl text-purple-600 mr-3"></i>
+                        <h3 class="text-xl font-semibold">Impressores</h3>
+                    </div>
+                    <p class="text-gray-600 mb-3">Dispositiu de sortida per imprimir documents. Problemes: atascaments de paper, tinta seca, drivers.</p>
+                    <div class="flex justify-between text-sm text-gray-500">
+                        <span>Freqüència d'ús: <span class="font-medium">Mitjana</span></span>
+                        <span>Dificultat: <span class="font-medium">Mitjana</span></span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Secció Manteniment -->
+        <section id="manteniment" class="mb-12 bg-white p-6 rounded-lg shadow-md">
+            <h2 class="text-2xl font-bold text-blue-700 mb-6">Manteniment Bàsic</h2>
+            
+            <div class="mb-8">
+                <h3 class="text-xl font-semibold mb-3">Eines Necessàries</h3>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                    <div class="flex flex-col items-center p-3 bg-gray-100 rounded-lg">
+                        <i class="fas fa-screwdriver text-2xl mb-2 text-blue-600"></i>
+                        <span class="text-sm font-medium">Destornilladors</span>
+                    </div>
+                    <div class="flex flex-col items-center p-3 bg-gray-100 rounded-lg">
+                        <i class="fas fa-air-freshener text-2xl mb-2 text-green-600"></i>
+                        <span class="text-sm font-medium">Aire comprimit</span>
+                    </div>
+                    <div class="flex flex-col items-center p-3 bg-gray-100 rounded-lg">
+                        <i class="fas fa-broom text-2xl mb-2 text-purple-600"></i>
+                        <span class="text-sm font-medium">Pinzells</span>
+                    </div>
+                    <div class="flex flex-col items-center p-3 bg-gray-100 rounded-lg">
+                        <i class="fas fa-plug text-2xl mb-2 text-yellow-600"></i>
+                        <span class="text-sm font-medium">Tester</span>
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                <h3 class="text-xl font-semibold mb-3">Procediment Bàsic</h3>
+                <div class="space-y-4">
+                    <div class="flex items-start">
+                        <div class="bg-blue-100 text-blue-800 rounded-full w-8 h-8 flex items-center justify-center flex-shrink-0 mr-3">1</div>
+                        <p>Desconnecta el perifèric de l'ordinador i de la font d'alimentació si en té.</p>
+                    </div>
+                    <div class="flex items-start">
+                        <div class="bg-blue-100 text-blue-800 rounded-full w-8 h-8 flex items-center justify-center flex-shrink-0 mr-3">2</div>
+                        <p>Neteja l'exterior amb un drap sec o lleugerament humit (no mullat).</p>
+                    </div>
+                    <div class="flex items-start">
+                        <div class="bg-blue-100 text-blue-800 rounded-full w-8 h-8 flex items-center justify-center flex-shrink-0 mr-3">3</div>
+                        <p>Per a teclats i ratolins, utilitza aire comprimit per eliminar la brutícia entre les tecles o al sensor.</p>
+                    </div>
+                    <div class="flex items-start">
+                        <div class="bg-blue-100 text-blue-800 rounded-full w-8 h-8 flex items-center justify-center flex-shrink-0 mr-3">4</div>
+                        <p>Comprova els cables i connexions per detectar danys visibles.</p>
+                    </div>
+                    <div class="flex items-start">
+                        <div class="bg-blue-100 text-blue-800 rounded-full w-8 h-8 flex items-center justify-center flex-shrink-0 mr-3">5</div>
+                        <p>Reconnecta i prova el funcionament.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Secció Exemple Pràctic -->
+        <section id="exemple" class="mb-12">
+            <h2 class="text-2xl font-bold text-blue-700 mb-6">Exemple Pràctic: Neteja d'un Teclat</h2>
+            
+            <div class="bg-white p-6 rounded-lg shadow-md">
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div>
+                        <h3 class="text-xl font-semibold mb-3">Passos a Seguir</h3>
+                        <ol class="list-decimal pl-6 space-y-3">
+                            <li>Desconnecta el teclat de l'ordinador.</li>
+                            <li>Gira el teclat cap avall i sacseja-lo suau per treure residus.</li>
+                            <li>Utilitza una llauna d'aire comprimit per bufar entre les tecles.</li>
+                            <li>Per a taques persistents, utilitza un drap humit (no mullat) amb una mica d'alcohol isopropílic.</li>
+                            <li>Deixa assecar completament abans de tornar a connectar.</li>
+                        </ol>
+                        
+                        <div class="mt-6 bg-yellow-50 border-l-4 border-yellow-400 p-4">
+                            <div class="flex">
+                                <div class="flex-shrink-0">
+                                    <i class="fas fa-exclamation-triangle text-yellow-500"></i>
+                                </div>
+                                <div class="ml-3">
+                                    <p class="text-sm text-yellow-700">
+                                        <strong>Precaució:</strong> No utilitzis aigua ni productes de neteja agressius. Mai mullis directament el teclat.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="flex flex-col items-center justify-center">
+                        <div class="relative w-full max-w-md">
+                            <img id="keyboard-image" src="https://images.unsplash.com/photo-1581094271901-8022df4466f9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" alt="Teclat per netejar" class="rounded-lg shadow-md w-full">
+                            <div class="absolute inset-0 flex items-center justify-center">
+                                <button id="clean-btn" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full transition opacity-90 hover:opacity-100">
+                                    <i class="fas fa-spray-can mr-2"></i>Netejar Ara
+                                </button>
+                            </div>
+                        </div>
+                        <div class="mt-4 w-full bg-gray-200 rounded-full h-4">
+                            <div id="clean-progress" class="progress-bar bg-blue-600 h-4 rounded-full" style="width: 0%"></div>
+                        </div>
+                        <p id="progress-text" class="text-sm text-gray-600 mt-2">Prepara't per netejar el teclat</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Secció Exercici -->
+        <section id="exercici" class="mb-12">
+            <h2 class="text-2xl font-bold text-blue-700 mb-6">Exercici Pràctic</h2>
+            
+            <div class="bg-white p-6 rounded-lg shadow-md">
+                <h3 class="text-xl font-semibold mb-4">Test de Coneixements</h3>
+                <p class="mb-6">Respon les següents preguntes per comprovar el que has après:</p>
+                
+                <div class="space-y-6">
+                    <!-- Pregunta 1 -->
+                    <div class="border-b pb-4">
+                        <p class="font-medium mb-3">1. Quina és la primera cosa que has de fer abans de netejar qualsevol perifèric?</p>
+                        <div class="space-y-2">
+                            <div class="flex items-center">
+                                <input type="radio" id="q1-a" name="q1" value="a" class="mr-2">
+                                <label for="q1-a">Comprovar si encara està en garantia</label>
+                            </div>
+                            <div class="flex items-center">
+                                <input type="radio" id="q1-b" name="q1" value="b" class="mr-2">
+                                <label for="q1-b">Desconnectar-lo de l'ordinador i font d'alimentació</label>
+                            </div>
+                            <div class="flex items-center">
+                                <input type="radio" id="q1-c" name="q1" value="c" class="mr-2">
+                                <label for="q1-c">Obrir-lo per veure l'interior</label>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Pregunta 2 -->
+                    <div class="border-b pb-4">
+                        <p class="font-medium mb-3">2. Quin producte és més adequat per netejar un teclat?</p>
+                        <div class="space-y-2">
+                            <div class="flex items-center">
+                                <input type="radio" id="q2-a" name="q2" value="a" class="mr-2">
+                                <label for="q2-a">Aigua amb sabó</label>
+                            </div>
+                            <div class="flex items-center">
+                                <input type="radio" id="q2-b" name="q2" value="b" class="mr-2">
+                                <label for="q2-b">Alcohol isopropílic</label>
+                            </div>
+                            <div class="flex items-center">
+                                <input type="radio" id="q2-c" name="q2" value="c" class="mr-2">
+                                <label for="q2-c">Lleixiu diluït</label>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Pregunta 3 -->
+                    <div>
+                        <p class="font-medium mb-3">3. Quin és el principal problema dels ratolins òptics?</p>
+                        <div class="space-y-2">
+                            <div class="flex items-center">
+                                <input type="radio" id="q3-a" name="q3" value="a" class="mr-2">
+                                <label for="q3-a">El sensor s'embruta</label>
+                            </div>
+                            <div class="flex items-center">
+                                <input type="radio" id="q3-b" name="q3" value="b" class="mr-2">
+                                <label for="q3-b">El cable sempre es trenca</label>
+                            </div>
+                            <div class="flex items-center">
+                                <input type="radio" id="q3-c" name="q3" value="c" class="mr-2">
+                                <label for="q3-c">Es descalibren amb el temps</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="mt-8">
+                    <button id="check-answers" class="bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-6 rounded transition">
+                        <i class="fas fa-check-circle mr-2"></i>Comprovar Respostes
+                    </button>
+                    
+                    <div id="quiz-feedback" class="mt-4 p-4 rounded-lg hidden">
+                        <div class="flex items-center">
+                            <i id="feedback-icon" class="text-2xl mr-3"></i>
+                            <p id="feedback-text" class="font-medium"></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Peu de pàgina -->
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Manteniment de Perifèrics</h3>
+                    <p class="text-gray-300">Recursos per a alumnes de cicles formatius de grau mitjà.</p>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Enllaços Ràpids</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#intro" class="text-gray-300 hover:text-white transition">Introducció</a></li>
+                        <li><a href="#tipus" class="text-gray-300 hover:text-white transition">Tipus de Perifèrics</a></li>
+                        <li><a href="#exemple" class="text-gray-300 hover:text-white transition">Exemple Pràctic</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Sallenet</h3>
+                    <p class="text-gray-300">lasallebarceloneta.sallenet.org</p>
+                    <p class="text-gray-300"></p>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-6 text-center text-gray-400">
+                <p></p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Simulació de neteja de teclat
+        document.getElementById('clean-btn').addEventListener('click', function() {
+            const progressBar = document.getElementById('clean-progress');
+            const progressText = document.getElementById('progress-text');
+            const btn = this;
+            
+            btn.disabled = true;
+            btn.innerHTML = '<i class="fas fa-spinner fa-spin mr-2"></i>Netejant...';
+            
+            let progress = 0;
+            const interval = setInterval(() => {
+                progress += 5;
+                progressBar.style.width = progress + '%';
+                
+                if (progress <= 30) {
+                    progressText.textContent = "Eliminant pols i residus...";
+                } else if (progress <= 70) {
+                    progressText.textContent = "Netejant entre les tecles...";
+                } else {
+                    progressText.textContent = "Assecant...";
+                }
+                
+                if (progress >= 100) {
+                    clearInterval(interval);
+                    progressText.textContent = "Neteja completada!";
+                    btn.innerHTML = '<i class="fas fa-check mr-2"></i>Fet';
+                    
+                    // Canviar la imatge del teclat
+                    document.getElementById('keyboard-image').src = "https://images.unsplash.com/photo-1542435503-956c469947f6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80";
+                }
+            }, 200);
+        });
+
+        // Comprovar respostes de l'exercici
+        document.getElementById('check-answers').addEventListener('click', function() {
+            const q1 = document.querySelector('input[name="q1"]:checked')?.value;
+            const q2 = document.querySelector('input[name="q2"]:checked')?.value;
+            const q3 = document.querySelector('input[name="q3"]:checked')?.value;
+            
+            const feedback = document.getElementById('quiz-feedback');
+            const feedbackIcon = document.getElementById('feedback-icon');
+            const feedbackText = document.getElementById('feedback-text');
+            
+            if (!q1 || !q2 || !q3) {
+                feedback.className = "mt-4 p-4 rounded-lg bg-red-100 border-l-4 border-red-500";
+                feedbackIcon.className = "fas fa-exclamation-circle text-red-500 text-2xl mr-3";
+                feedbackText.textContent = "Si us plau, respon totes les preguntes.";
+                feedback.classList.remove('hidden');
+                return;
+            }
+            
+            let correctAnswers = 0;
+            if (q1 === 'b') correctAnswers++;
+            if (q2 === 'b') correctAnswers++;
+            if (q3 === 'a') correctAnswers++;
+            
+            const percentage = Math.round((correctAnswers / 3) * 100);
+            
+            if (correctAnswers === 3) {
+                feedback.className = "mt-4 p-4 rounded-lg bg-green-100 border-l-4 border-green-500";
+                feedbackIcon.className = "fas fa-check-circle text-green-500 text-2xl mr-3";
+                feedbackText.textContent = `Perfecte! Has encertat totes les respostes (${percentage}%)`;
+            } else if (correctAnswers >= 1) {
+                feedback.className = "mt-4 p-4 rounded-lg bg-yellow-100 border-l-4 border-yellow-500";
+                feedbackIcon.className = "fas fa-check-circle text-yellow-500 text-2xl mr-3";
+                feedbackText.textContent = `Bona feina! Has encertat ${correctAnswers} de 3 respostes (${percentage}%)`;
+            } else {
+                feedback.className = "mt-4 p-4 rounded-lg bg-red-100 border-l-4 border-red-500";
+                feedbackIcon.className = "fas fa-times-circle text-red-500 text-2xl mr-3";
+                feedbackText.textContent = `Has d'estudiar més. Has encertat ${correctAnswers} de 3 respostes (${percentage}%)`;
+            }
+            
+            feedback.classList.remove('hidden');
+        });
+
+        // Scroll suau per als enllaços de navegació
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>

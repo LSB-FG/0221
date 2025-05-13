@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classificació de Perifèrics Informàtics</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .hero-gradient {
+            background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 50%, #ec4899 100%);
+        }
+        .peripheral-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        .type-tab.active {
+            border-bottom: 3px solid #3b82f6;
+            color: #3b82f6;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 font-sans">
+    <!-- Capçalera -->
+    <header class="hero-gradient text-white shadow-lg">
+        <div class="container mx-auto px-4 py-12">
+            <div class="flex justify-between items-center">
+                <div>
+                    <h1 class="text-4xl font-bold mb-2">Perifèrics Informàtics</h1>
+                    <p class="text-xl opacity-90">Classificació i funcionalitats</p>
+                </div>
+                <div class="flex space-x-4">
+                    <a href="mantenimiento.html" class="bg-white text-indigo-600 px-4 py-2 rounded-lg font-medium hover:bg-gray-100 transition">
+                        <i class="fas fa-tools mr-2"></i>Manteniment
+                    </a>
+                    <a href="perifericos.html" class="bg-indigo-700 text-white px-4 py-2 rounded-lg font-medium hover:bg-indigo-800 transition">
+                        <i class="fas fa-keyboard mr-2"></i>Perifèrics
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Contingut principal -->
+    <main class="container mx-auto px-4 py-8">
+        <!-- Introducció -->
+        <section class="mb-12 bg-white rounded-xl shadow-md p-6">
+            <h2 class="text-3xl font-bold text-gray-800 mb-4">Què són els perifèrics informàtics?</h2>
+            <p class="text-gray-600 mb-4 text-lg">
+                Els perifèrics informàtics són dispositius que permeten la comunicació entre l'usuari i l'ordinador, o entre diferents ordinadors. Es connecten a la unitat central de processament (CPU) i amplien les seves capacitats.
+            </p>
+            <div class="flex items-center bg-blue-50 rounded-lg p-4">
+                <i class="fas fa-info-circle text-blue-500 text-2xl mr-4"></i>
+                <p class="text-blue-800">
+                    <strong>Dada important:</strong> Els perifèrics no formen part del nucli bàsic de l'ordinador (CPU, memòria RAM, etc.), però són essencials per interactuar-hi.
+                </p>
+            </div>
+        </section>
+
+        <!-- Navegació per tipus -->
+        <section class="mb-8">
+            <div class="flex overflow-x-auto pb-2 space-x-4">
+                <button onclick="showType('entrada')" class="type-tab active px-6 py-3 text-gray-600 hover:text-gray-800 transition whitespace-nowrap">
+                    <i class="fas fa-sign-in-alt mr-2"></i>Entrada
+                </button>
+                <button onclick="showType('sortida')" class="type-tab px-6 py-3 text-gray-600 hover:text-gray-800 transition whitespace-nowrap">
+                    <i class="fas fa-sign-out-alt mr-2"></i>Sortida
+                </button>
+                <button onclick="showType('entrada-sortida')" class="type-tab px-6 py-3 text-gray-600 hover:text-gray-800 transition whitespace-nowrap">
+                    <i class="fas fa-exchange-alt mr-2"></i>Entrada/Sortida
+                </button>
+                <button onclick="showType('emmagatzematge')" class="type-tab px-6 py-3 text-gray-600 hover:text-gray-800 transition whitespace-nowrap">
+                    <i class="fas fa-hdd mr-2"></i>Emmagatzematge
+                </button>
+                <button onclick="showType('comunicacio')" class="type-tab px-6 py-3 text-gray-600 hover:text-gray-800 transition whitespace-nowrap">
+                    <i class="fas fa-network-wired mr-2"></i>Comunicació
+                </button>
+            </div>
+        </section>
+
+        <!-- Contingut dels perifèrics -->
+        <section id="peripherals-content">
+            <!-- Perifèrics d'entrada (mostrat per defecte) -->
+            <div id="entrada" class="peripheral-type">
+                <h2 class="text-2xl font-bold text-gray-800 mb-6 flex items-center">
+                    <i class="fas fa-sign-in-alt text-blue-500 mr-3"></i> Perifèrics d'Entrada
+                </h2>
+                <p class="text-gray-600 mb-6">
+                    Els perifèrics d'entrada permeten introduir dades o ordres a l'ordinador. Transformen la informació externa en senyals electrònics que la CPU pot processar.
+                </p>
+                
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- Teclat -->
+                    <div class="peripheral-card bg-white rounded-xl shadow-md overflow-hidden transition duration-300">
+                        <div class="h-48 bg-blue-100 flex items-center justify-center">
+                            <i class="fas fa-keyboard text-6xl text-blue-600"></i>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="font-bold text-xl mb-2 text-gray-800">Teclat</h3>
+                            <p class="text-gray-600 mb-4">
+                                Dispositiu amb tecles que permet introduir text i ordres. Pot ser mecànic, de membrana o ergonòmic.
+                            </p>
+                            <div class="flex items-center text-sm text-gray-500">
+                                <i class="fas fa-plug mr-2"></i>
+                                <span>Connexió: USB, Bluetooth o PS/2</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Ratolí -->
+                    <div class="peripheral-card bg-white rounded-xl shadow-md overflow-hidden transition duration-300">
+                        <div class="h-48 bg-green-100 flex items-center justify-center">
+                            <i class="fas fa-mouse text-6xl text-green-600"></i>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="font-bold text-xl mb-2 text-gray-800">Ratolí</h3>
+                            <p class="text-gray-600 mb-4">
+                                Permet moure el cursor i seleccionar elements a la pantalla. Pot ser òptic, làser o amb bola.
+                            </p>
+                            <div class="flex items-center text-sm text-gray-500">
+                                <i class="fas fa-plug mr-2"></i>
+                                <span>Connexió: USB, Bluetooth o sense fil</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Escàner -->
+                    <div class="peripheral-card bg-white rounded-xl shadow-md overflow-hidden transition duration-300">
+                        <div class="h-48 bg-purple-100 flex items-center justify-center">
+                            <i class="fas fa-scanner text-6xl text-purple-600"></i>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="font-bold text-xl mb-2 text-gray-800">Escàner</h3>
+                            <p class="text-gray-600 mb-4">
+                                Digitalitza imatges o documents en paper per convertir-los en imatges digitals.
+                            </p>
+                            <div class="flex items-center text-sm text-gray-500">
+                                <i class="fas fa-plug mr-2"></i>
+                                <span>Connexió: USB o xarxa</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Perifèrics de sortida (ocult per defecte) -->
+            <div id="sortida" class="peripheral-type hidden">
+                <h2 class="text-2xl font-bold text-gray-800 mb-6 flex items-center">
+                    <i class="fas fa-sign-out-alt text-red-500 mr-3"></i> Perifèrics de Sortida
+                </h2>
+                <p class="text-gray-600 mb-6">
+                    Aquests dispositius reben informació de l'ordinador i la mostren a l'usuari en un format comprensible (visual, auditiu, etc.).
+                </p>
+                
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- Monitor -->
+                    <div class="peripheral-card bg-white rounded-xl shadow-md overflow-hidden transition duration-300">
+                        <div class="h-48 bg-red-100 flex items-center justify-center">
+                            <i class="fas fa-desktop text-6xl text-red-600"></i>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="font-bold text-xl mb-2 text-gray-800">Monitor</h3>
+                            <p class="text-gray-600 mb-4">
+                                Mostra la informació de manera visual. Pot ser LCD, LED, OLED o CRT (antics).
+                            </p>
+                            <div class="flex items-center text-sm text-gray-500">
+                                <i class="fas fa-plug mr-2"></i>
+                                <span>Connexió: HDMI, DisplayPort, VGA o DVI</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Impressora -->
+                    <div class="peripheral-card bg-white rounded-xl shadow-md overflow-hidden transition duration-300">
+                        <div class="h-48 bg-yellow-100 flex items-center justify-center">
+                            <i class="fas fa-print text-6xl text-yellow-600"></i>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="font-bold text-xl mb-2 text-gray-800">Impressora</h3>
+                            <p class="text-gray-600 mb-4">
+                                Converteix documents digitals en paper. Tipus: tinta, làser, tèrmica o 3D.
+                            </p>
+                            <div class="flex items-center text-sm text-gray-500">
+                                <i class="fas fa-plug mr-2"></i>
+                                <span>Connexió: USB, WiFi o xarxa</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Altaveus -->
+                    <div class="peripheral-card bg-white rounded-xl shadow-md overflow-hidden transition duration-300">
+                        <div class="h-48 bg-indigo-100 flex items-center justify-center">
+                            <i class="fas fa-volume-up text-6xl text-indigo-600"></i>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="font-bold text-xl mb-2 text-gray-800">Altaveus</h3>
+                            <p class="text-gray-600 mb-4">
+                                Transformen senyals electròniques en so. Poden ser estèreo, 5.1, 7.1 o auriculars.
+                            </p>
+                            <div class="flex items-center text-sm text-gray-500">
+                                <i class="fas fa-plug mr-2"></i>
+                                <span>Connexió: Jack 3.5mm, USB o Bluetooth</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Perifèrics d'entrada/sortida (ocult per defecte) -->
+            <div id="entrada-sortida" class="peripheral-type hidden">
+                <h2 class="text-2xl font-bold text-gray-800 mb-6 flex items-center">
+                    <i class="fas fa-exchange-alt text-purple-500 mr-3"></i> Perifèrics d'Entrada/Sortida
+                </h2>
+                <p class="text-gray-600 mb-6">
+                    Dispositius bidireccionals que permeten tant introduir com rebre informació de l'ordinador.
+                </p>
+                
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- Pantalla tàctil -->
+                    <div class="peripheral-card bg-white rounded-xl shadow-md overflow-hidden transition duration-300">
+                        <div class="h-48 bg-purple-100 flex items-center justify-center">
+                            <i class="fas fa-mobile-alt text-6xl text-purple-600"></i>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="font-bold text-xl mb-2 text-gray-800">Pantalla Tàctil</h3>
+                            <p class="text-gray-600 mb-4">
+                                Funciona com a dispositiu d'entrada (toc) i sortida (visual). Comú en mòbils i tauletes.
+                            </p>
+                            <div class="flex items-center text-sm text-gray-500">
+                                <i class="fas fa-plug mr-2"></i>
+                                <span>Integrat en el dispositiu</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Mòdem -->
+                    <div class="peripheral-card bg-white rounded-xl shadow-md overflow-hidden transition duration-300">
+                        <div class="h-48 bg-blue-100 flex items-center justify-center">
+                            <i class="fas fa-wifi text-6xl text-blue-600"></i>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="font-bold text-xl mb-2 text-gray-800">Mòdem</h3>
+                            <p class="text-gray-600 mb-4">
+                                Envia i rep dades a través de línies telefòniques o fibra òptica.
+                            </p>
+                            <div class="flex items-center text-sm text-gray-500">
+                                <i class="fas fa-plug mr-2"></i>
+                                <span>Connexió: RJ11, RJ45 o USB</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Targeta de xarxa -->
+                    <div class="peripheral-card bg-white rounded-xl shadow-md overflow-hidden transition duration-300">
+                        <div class="h-48 bg-green-100 flex items-center justify-center">
+                            <i class="fas fa-network-wired text-6xl text-green-600"></i>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="font-bold text-xl mb-2 text-gray-800">Targeta de Xarxa</h3>
+                            <p class="text-gray-600 mb-4">
+                                Permet la connexió a xarxes locals o internet. Pot ser cableada (Ethernet) o sense fil (WiFi).
+                            </p>
+                            <div class="flex items-center text-sm text-gray-500">
+                                <i class="fas fa-plug mr-2"></i>
+                                <span>Integrat o PCIe/USB</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Perifèrics d'emmagatzematge (ocult per defecte) -->
+            <div id="emmagatzematge" class="peripheral-type hidden">
+                <h2 class="text-2xl font-bold text-gray-800 mb-6 flex items-center">
+                    <i class="fas fa-hdd text-orange-500 mr-3"></i> Perifèrics d'Emmagatzematge
+                </h2>
+                <p class="text-gray-600 mb-6">
+                    Dispositius que permeten guardar informació de manera permanent o semipermanent.
+                </p>
+                
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- Disc dur extern -->
+                    <div class="peripheral-card bg-white rounded-xl shadow-md overflow-hidden transition duration-300">
+                        <div class="h-48 bg-orange-100 flex items-center justify-center">
+                            <i class="fas fa-hdd text-6xl text-orange-600"></i>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="font-bold text-xl mb-2 text-gray-800">Disc Dur Extern</h3>
+                            <p class="text-gray-600 mb-4">
+                                Emmagatzema grans quantitats de dades. Pot ser HDD (mecànic) o SSD (estat sòlid).
+                            </p>
+                            <div class="flex items-center text-sm text-gray-500">
+                                <i class="fas fa-plug mr-2"></i>
+                                <span>Connexió: USB, Thunderbolt o eSATA</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Memòria USB -->
+                    <div class="peripheral-card bg-white rounded-xl shadow-md overflow-hidden transition duration-300">
+                        <div class="h-48 bg-blue-100 flex items-center justify-center">
+                            <i class="fas fa-usb text-6xl text-blue-600"></i>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="font-bold text-xl mb-2 text-gray-800">Memòria USB</h3>
+                            <p class="text-gray-600 mb-4">
+                                Petits dispositius d'emmagatzematge portàtils amb memòria flash.
+                            </p>
+                            <div class="flex items-center text-sm text-gray-500">
+                                <i class="fas fa-plug mr-2"></i>
+                                <span>Connexió: USB-A, USB-C o microUSB</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Lector de targetes -->
+                    <div class="peripheral-card bg-white rounded-xl shadow-md overflow-hidden transition duration-300">
+                        <div class="h-48 bg-green-100 flex items-center justify-center">
+                            <i class="fas fa-sd-card text-6xl text-green-600"></i>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="font-bold text-xl mb-2 text-gray-800">Lector de Targetes</h3>
+                            <p class="text-gray-600 mb-4">
+                                Permet llegir targetes de memòria com SD, microSD, CompactFlash, etc.
+                            </p>
+                            <div class="flex items-center text-sm text-gray-500">
+                                <i class="fas fa-plug mr-2"></i>
+                                <span>Connexió: USB o integrat</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Perifèrics de comunicació (ocult per defecte) -->
+            <div id="comunicacio" class="peripheral-type hidden">
+                <h2 class="text-2xl font-bold text-gray-800 mb-6 flex items-center">
+                    <i class="fas fa-network-wired text-teal-500 mr-3"></i> Perifèrics de Comunicació
+                </h2>
+                <p class="text-gray-600 mb-6">
+                    Dispositius que permeten la connexió i transferència de dades entre ordinadors o amb altres dispositius.
+                </p>
+                
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- Router -->
+                    <div class="peripheral-card bg-white rounded-xl shadow-md overflow-hidden transition duration-300">
+                        <div class="h-48 bg-teal-100 flex items-center justify-center">
+                            <i class="fas fa-router text-6xl text-teal-600"></i>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="font-bold text-xl mb-2 text-gray-800">Router</h3>
+                            <p class="text-gray-600 mb-4">
+                                Encamina paquets de dades entre xarxes, permetent la connexió a Internet.
+                            </p>
+                            <div class="flex items-center text-sm text-gray-500">
+                                <i class="fas fa-plug mr-2"></i>
+                                <span>Connexió: RJ45, fibra òptica o WiFi</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Switch -->
+                    <div class="peripheral-card bg-white rounded-xl shadow-md overflow-hidden transition duration-300">
+                        <div class="h-48 bg-indigo-100 flex items-center justify-center">
+                            <i class="fas fa-ethernet text-6xl text-indigo-600"></i>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="font-bold text-xl mb-2 text-gray-800">Switch</h3>
+                            <p class="text-gray-600 mb-4">
+                                Connecta diversos dispositius en una xarxa local, gestionant el tràfic de dades.
+                            </p>
+                            <div class="flex items-center text-sm text-gray-500">
+                                <i class="fas fa-plug mr-2"></i>
+                                <span>Connexió: RJ45 (ports múltiples)</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Adaptador Bluetooth -->
+                    <div class="peripheral-card bg-white rounded-xl shadow-md overflow-hidden transition duration-300">
+                        <div class="h-48 bg-blue-100 flex items-center justify-center">
+                            <i class="fab fa-bluetooth text-6xl text-blue-600"></i>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="font-bold text-xl mb-2 text-gray-800">Adaptador Bluetooth</h3>
+                            <p class="text-gray-600 mb-4">
+                                Permet la connexió sense fil amb dispositius com auriculars, ratolins o teclats.
+                            </p>
+                            <div class="flex items-center text-sm text-gray-500">
+                                <i class="fas fa-plug mr-2"></i>
+                                <span>Connexió: USB o integrat</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Taula comparativa -->
+        <section class="mt-12 bg-white rounded-xl shadow-md p-6">
+            <h2 class="text-2xl font-bold text-gray-800 mb-6 flex items-center">
+                <i class="fas fa-table text-blue-500 mr-3"></i> Taula Comparativa de Perifèrics
+            </h2>
+            
+            <div class="overflow-x-auto">
+                <table class="min-w-full divide-y divide-gray-200">
+                    <thead class="bg-gray-50">
+                        <tr>
+                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Tipus</th>
+                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Exemples</th>
+                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Funció Principal</th>
+                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Tecnologies</th>
+                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Velocitat Transferència</th>
+                        </tr>
+                    </thead>
+                    <tbody class="bg-white divide-y divide-gray-200">
+                        <tr>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-blue-600">Entrada</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Teclat, ratolí, escàner</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Introduir dades a l'ordinador</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">USB, Bluetooth, infrarojos</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">1-12 Mbps</td>
+                        </tr>
+                        <tr>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-red-600">Sortida</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Monitor, impressora, altaveus</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Mostrar/emettre informació</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">HDMI, VGA, Jack 3.5mm</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">1.5-18 Gbps</td>
+                        </tr>
+                        <tr>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-purple-600">E/S</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Pantalla tàctil, mòdem</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Entrada i sortida de dades</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">USB, RJ45, WiFi</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">10-1000 Mbps</td>
+                        </tr>
+                        <tr>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-orange-600">Emmagatz.</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Disc dur, USB, lector CD</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Guardar dades permanentment</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">SATA, USB, Thunderbolt</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">100-2000 Mbps</td>
+                        </tr>
+                        <tr>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-teal-600">Comunic.</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Router, switch, targeta xarxa</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Connectar dispositius</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Ethernet, WiFi, fibra</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">10-10000 Mbps</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+        
+        <!-- Consells d'elecció -->
+        <section class="mt-12 bg-indigo-50 rounded-xl shadow-md p-6">
+            <h2 class="text-2xl font-bold text-indigo-800 mb-6 flex items-center">
+                <i class="fas fa-lightbulb text-indigo-600 mr-3"></i> Consells per Triar Perifèrics
+            </h2>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="bg-white p-4 rounded-lg shadow-sm">
+                    <div class="text-indigo-600 mb-2">
+                        <i class="fas fa-check-circle text-xl"></i>
+                    </div>
+                    <h3 class="font-semibold text-gray-800 mb-2">Compatibilitat</h3>
+                    <p class="text-sm text-gray-600">Verifica que sigui compatible amb el teu sistema operatiu i ports disponibles.</p>
+                </div>
+                
+                <div class="bg-white p-4 rounded-lg shadow-sm">
+                    <div class="text-indigo-600 mb-2">
+                        <i class="fas fa-bolt text-xl"></i>
+                    </div>
+                    <h3 class="font-semibold text-gray-800 mb-2">Rendiment</h3>
+                    <p class="text-sm text-gray-600">Per a tasques exigents, tria perifèrics amb alta velocitat de resposta.</p>
+                </div>
+                
+                <div class="bg-white p-4 rounded-lg shadow-sm">
+                    <div class="text-indigo-600 mb-2">
+                        <i class="fas fa-euro-sign text-xl"></i>
+                    </div>
+                    <h3 class="font-semibold text-gray-800 mb-2">Relació qualitat-preu</h3>
+                    <p class="text-sm text-gray-600">No sempre el més car és el millor. Cerca opinions d'usuaris.</p>
+                </div>
+                
+                <div class="bg-white p-4 rounded-lg shadow-sm">
+                    <div class="text-indigo-600 mb-2">
+                        <i class="fas fa-ergonomic text-xl"></i>
+                    </div>
+                    <h3 class="font-semibold text-gray-800 mb-2">Ergonomia</h3>
+                    <p class="text-sm text-gray-600">Especialment important en teclats i ratolins per evitar lesions.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <!-- Peu de pàgina -->
+    <footer class="bg-gray-800 text-white mt-12">
+        <div class="container mx-auto px-4 py-8">
+            <div class="grid md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4"></h3>
+                    <p class="text-gray-300"> </p>
+                </div>
+                
+                <div>
+                    <h3 class="text-xl font-bold mb-4"></h3>
+                    <ul class="space-y-2">
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Connecta</h3>
+                    <div class="flex space-x-4">
+                        <a href="https://barceloneta.lasalle.cat/" class="bg-gray-700 w-10 h-10 rounded-full flex items-center justify-center hover:bg-blue-600 transition">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="https://barceloneta.lasalle.cat/" class="bg-gray-700 w-10 h-10 rounded-full flex items-center justify-center hover:bg-blue-400 transition">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="https://barceloneta.lasalle.cat/" class="bg-gray-700 w-10 h-10 rounded-full flex items-center justify-center hover:bg-red-600 transition">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                        <a href="https://barceloneta.lasalle.cat/" class="bg-gray-700 w-10 h-10 rounded-full flex items-center justify-center hover:bg-purple-600 transition">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
+                <p></p>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        // Funció per canviar entre tipus de perifèrics
+        function showType(type) {
+            // Amaga tots els tipus
+            document.querySelectorAll('.peripheral-type').forEach(el => {
+                el.classList.add('hidden');
+            });
+            
+            // Mostra el tipus seleccionat
+            document.getElementById(type).classList.remove('hidden');
+            
+            // Actualitza les pestanyes actives
+            document.querySelectorAll('.type-tab').forEach(tab => {
+                tab.classList.remove('active');
+            });
+            
+            // Marca la pestanya actual com a activa
+            const activeTab = Array.from(document.querySelectorAll('.type-tab')).find(tab => 
+                tab.innerHTML.includes(type.split('-').length > 1 ? 'exchange-alt' : type === 'emmagatzematge' ? 'hdd' : type === 'comunicacio' ? 'network-wired' : type)
+            );
+            
+            if (activeTab) {
+                activeTab.classList.add('active');
+            }
+        }
+        
+        // Animació per les targetes de perifèrics
+        document.querySelectorAll('.peripheral-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-5px)';
+                this.style.boxShadow = '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = '';
+                this.style.boxShadow = '';
+            });
+        });
+    </script>
+</body>
+</html>
