@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>USB d'Arrencada - Sistemes Microinformàtics i Xarxes</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+.hero-gradient {
+background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+}
+.tool-card:hover {
+transform: translateY(-5px);
+box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+.step-icon {
+width: 60px;
+height: 60px;
+background-color: #3b82f6;
+}
+</style>
+</head>
+<body class="bg-gray-50 font-sans">
+<!-- Capçalera -->
+<header class="hero-gradient text-white">
+<div class="container mx-auto px-4 py-16">
+<div class="flex flex-col md:flex-row items-center">
+<div class="md:w-1/2 mb-10 md:mb-0">
+<h1 class="text-4xl md:text-5xl font-bold mb-4">USB d'Arrencada per a Reparació d'Equips</h1>
+<p class="text-xl mb-8">Eines essencials per a tècnics en sistemes microinformàtics i xarxes</p>
+<a href="#eines" class="bg-white text-blue-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition">Descobreix les eines</a>
+</div>
+<div class="md:w-1/2 flex justify-center">
+<img src="https://cdn-icons-png.flaticon.com/512/2062/2062109.png" alt="USB d'arrencada" class="w-64 h-64">
+</div>
+</div>
+</div>
+</header>
+
+<!-- Secció d'introducció -->
+<section class="py-16 bg-white">
+<div class="container mx-auto px-4">
+<div class="text-center mb-12">
+<h2 class="text-3xl font-bold text-gray-800 mb-4">Què és un USB d'arrencada?</h2>
+<div class="w-24 h-1 bg-blue-500 mx-auto mb-6"></div>
+<p class="text-lg text-gray-600 max-w-3xl mx-auto">
+Un USB d'arrencada és una memòria USB preparada per iniciar un sistema operatiu o eines de reparació sense necessitat d'accedir al disc dur de l'ordinador. Això és essencial per a diagnòstic i reparació de problemes, recuperació de dades o instal·lació de sistemes operatius.
+</p>
+</div>
+</div>
+</section>
+
+<!-- Eines destacades -->
+<section id="eines" class="py-16 bg-gray-50">
+<div class="container mx-auto px-4">
+<h2 class="text-3xl font-bold text-center text-gray-800 mb-12">Eines Imprescindibles</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- Rufus -->
+<div class="bg-white rounded-xl shadow-lg overflow-hidden tool-card transition duration-300">
+<div class="p-6">
+<div class="flex items-center mb-4">
+<div class="bg-blue-100 p-2 rounded-lg mr-4">
+<i class="fas fa-fire text-blue-600 text-2xl"></i>
+</div>
+<h3 class="text-xl font-bold text-gray-800">Rufus</h3>
+</div>
+<p class="text-gray-600 mb-4">
+Eina lliure i de codi obert per crear USB d'arrencada amb imatges ISO. Ràpid i eficient per a instal·lacions de Windows o Linux.
+</p>
+<a href="https://rufus.ie/" target="_blank" class="text-blue-600 font-semibold hover:underline flex items-center">
+Visita el web oficial
+<i class="fas fa-external-link-alt ml-2 text-sm"></i>
+</a>
+</div>
+</div>
+<!-- Hiren's BootCD -->
+<div class="bg-white rounded-xl shadow-lg overflow-hidden tool-card transition duration-300">
+<div class="p-6">
+<div class="flex items-center mb-4">
+<div class="bg-green-100 p-2 rounded-lg mr-4">
+<i class="fas fa-tools text-green-600 text-2xl"></i>
+</div>
+<h3 class="text-xl font-bold text-gray-800">Hiren's BootCD</h3>
+</div>
+<p class="text-gray-600 mb-4">
+Col·lecció d'eines de reparació incloent antivirus, recuperació de dades, clonació de discs, editor de registre i moltes més utilitats.
+</p>
+<a href="https://www.hirensbootcd.org/" target="_blank" class="text-blue-600 font-semibold hover:underline flex items-center">
+Visita el web oficial
+<i class="fas fa-external-link-alt ml-2 text-sm"></i>
+</a>
+</div>
+</div>
+<!-- Ultimate Boot CD -->
+<div class="bg-white rounded-xl shadow-lg overflow-hidden tool-card transition duration-300">
+<div class="p-6">
+<div class="flex items-center mb-4">
+<div class="bg-purple-100 p-2 rounded-lg mr-4">
+<i class="fas fa-compact-disc text-purple-600 text-2xl"></i>
+</div>
+<h3 class="text-xl font-bold text-gray-800">Ultimate Boot CD</h3>
+</div>
+<p class="text-gray-600 mb-4">
+Col·lecció d'eines de diagnòstic i reparació per a maquinari. Inclou utilitats per proves de RAM, CPU, disc dur i components del sistema.
+</p>
+<a href="https://www.ultimatebootcd.com/" target="_blank" class="text-blue-600 font-semibold hover:underline flex items-center">
+Visita el web oficial
+<i class="fas fa-external-link-alt ml-2 text-sm"></i>
+</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Crear USB d'arrencada Windows -->
+<section class="py-16 bg-white">
+<div class="container mx-auto px-4">
+<h2 class="text-3xl font-bold text-center text-gray-800 mb-12">Com crear un USB d'arrencada amb Windows</h2>
+<div class="max-w-4xl mx-auto">
+<!-- Pas 1 -->
+<div class="flex flex-col md:flex-row mb-8">
+<div class="md:w-1/4 flex justify-center mb-4 md:mb-0">
+<div class="step-icon rounded-full flex items-center justify-center text-white text-2xl font-bold">1</div>
+</div>
+<div class="md:w-3/4">
+<h3 class="text-xl font-semibold mb-2">Descarrega la ISO de Windows</h3>
+<p class="text-gray-600">
+Descàrrega la imatge ISO del Windows que vulguis instal·lar des de la <a href="https://www.microsoft.com/software-download" class="text-blue-600 font-semibold hover:underline">pàgina oficial de Microsoft</a>.
+</p>
+</div>
+</div>
+<!-- Pas 2 -->
+<div class="flex flex-col md:flex-row mb-8">
+<div class="md:w-1/4 flex justify-center mb-4 md:mb-0">
+<div class="step-icon rounded-full flex items-center justify-center text-white text-2xl font-bold">2</div>
+</div>
+<div class="md:w-3/4">
+<h3 class="text-xl font-semibold mb-2">Prepara el USB</h3>
+<p class="text-gray-600">
+Connecta una memòria USB amb mínim 8GB d'espai (tot el contingut s'esborrarà). Assegura't que no hi ha dades importants.
+</p>
+</div>
+</div>
+<!-- Pas 3 -->
+<div class="flex flex-col md:flex-row mb-8">
+<div class="md:w-1/4 flex justify-center mb-4 md:mb-0">
+<div class="step-icon rounded-full flex items-center justify-center text-white text-2xl font-bold">3</div>
+</div>
+<div class="md:w-3/4">
+<h3 class="text-xl font-semibold mb-2">Utilitza Rufus</h3>
+<p class="text-gray-600">
+Executa Rufus, selecciona el dispositiu USB, tria la imatge ISO descarregada i prem "Començar". Espera que finalitzi el procés.
+</p>
+<div class="mt-4 p-4 bg-gray-100 rounded-lg">
+<p class="text-sm text-gray-600">
+<i class="fas fa-info-circle text-blue-500 mr-2"></i>
+Assegura't que l'opció "Crear un dispositiu d'arrencada" està seleccionada i el "Sistema de destí" és "UEFI" o "BIOS" segons necessitis.
+</p>
+</div>
+</div>
+</div>
+<!-- Pas 4 -->
+<div class="flex flex-col md:flex-row">
+<div class="md:w-1/4 flex justify-center mb-4 md:mb-0">
+<div class="step-icon rounded-full flex items-center justify-center text-white text-2xl font-bold">4</div>
+</div>
+<div class="md:w-3/4">
+<h3 class="text-xl font-semibold mb-2">Arrenca des de l'USB</h3>
+<p class="text-gray-600">
+Reinicia l'ordinador i accedeix al menú d'arrencada (normalment prement F12, ESC o la tecla indicada a la pantalla inicial). Selecciona el USB com a dispositiu d'arrencada.
+</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Casos pràctics -->
+<section class="py-16 bg-gray-50">
+<div class="container mx-auto px-4">
+<h2 class="text-3xl font-bold text-center text-gray-800 mb-12">Casos Pràctics amb USB d'Arrencada</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<!-- Cas 1 -->
+<div class="bg-white p-6 rounded-xl shadow-md">
+<div class="flex items-center mb-4">
+<div class="bg-red-100 p-3 rounded-lg mr-4">
+<i class="fas fa-virus-slash text-red-600"></i>
+</div>
+<h3 class="text-xl font-bold text-gray-800">Desinfecció avançada de virus</h3>
+</div>
+<p class="text-gray-600">
+Quan un virus impedeix l'arrencada normal del sistema, un USB amb <strong>Hiren's BootCD</strong> permet arrencar en un entorn segur i utilitzar antivirus com Kaspersky TDSSKiller o Malwarebytes per eliminar amenaces persistents.
+</p>
+</div>
+<!-- Cas 2 -->
+<div class="bg-white p-6 rounded-xl shadow-md">
+<div class="flex items-center mb-4">
+<div class="bg-yellow-100 p-3 rounded-lg mr-4">
+<i class="fas fa-hdd text-yellow-600"></i>
+</div>
+<h3 class="text-xl font-bold text-gray-800">Recuperació de particions</h3>
+</div>
+<p class="text-gray-600">
+Amb <strong>TestDisk</strong> (inclòs a Hiren i Ultimate Boot CD) es poden recuperar particions esborrades accidentalment o corregir taules de particions danyades, salvant dades valuoses sense necessitat d'instal·lar res al disc dur.
+</p>
+</div>
+<!-- Cas 3 -->
+<div class="bg-white p-6 rounded-xl shadow-md">
+<div class="flex items-center mb-4">
+<div class="bg-green-100 p-3 rounded-lg mr-4">
+<i class="fas fa-key text-green-600"></i>
+</div>
+<h3 class="text-xl font-bold text-gray-800">Recuperació de contrasenyes</h3>
+</div>
+<p class="text-gray-600">
+Utilitzant eines com <strong>NTPasswd</strong> o <strong>Offline NT Password & Registry Editor</strong> es poden canviar contrasenyes d'administrador perdudes en sistemes Windows sense necessitat de conèixer l'antiga contrasenya.
+</p>
+</div>
+<!-- Cas 4 -->
+<div class="bg-white p-6 rounded-xl shadow-md">
+<div class="flex items-center mb-4">
+<div class="bg-purple-100 p-3 rounded-lg mr-4">
+<i class="fas fa-clone text-purple-600"></i>
+</div>
+<h3 class="text-xl font-bold text-gray-800">Clonació de discs</h3>
+</div>
+<p class="text-gray-600">
+Amb <strong>Clonezilla</strong> o <strong>Macrium Reflect</strong> pot fer còpies d'imatge completes d'un disc dur per migrar a una unitat SSD més ràpida o crear còpies de seguretat abans de resoldre problemes complexes.
+</p>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Consells i recomanacions -->
+<section class="py-16 bg-blue-50">
+<div class="container mx-auto px-4">
+<div class="max-w-3xl mx-auto">
+<h2 class="text-3xl font-bold text-center text-gray-800 mb-8">Consells per a Tècnics</h2>
+<div class="bg-white p-6 rounded-xl shadow-md mb-6">
+<div class="flex items-start">
+<div class="bg-blue-100 p-2 rounded-lg mr-4 mt-1">
+<i class="fas fa-shield-alt text-blue-600"></i>
+</div>
+<div>
+<h3 class="text-xl font-semibold mb-2">Seguretat</h3>
+<p class="text-gray-600">
+Sempre treballa amb còpies de seguretat abans de fer canvis dràstics. Moltes eines de recuperació poden sobreescriure dades per error.
+</p>
+</div>
+</div>
+</div>
+<div class="bg-white p-6 rounded-xl shadow-md mb-6">
+<div class="flex items-start">
+<div class="bg-yellow-100 p-2 rounded-lg mr-4 mt-1">
+<i class="fas fa-boxes text-yellow-600"></i>
+</div>
+<div>
+<h3 class="text-xl font-semibold mb-2">Kit bàsic</h3>
+<p class="text-gray-600">
+Té sempre preparats diversos USB amb diferents eines: un per a Windows, un amb Hiren's BootCD i un altre amb distribucions Linux d'emergència com SystemRescueCd.
+</p>
+</div>
+</div>
+</div>
+<div class="bg-white p-6 rounded-xl shadow-md">
+<div class="flex items-start">
+<div class="bg-green-100 p-2 rounded-lg mr-4 mt-1">
+<i class="fas fa-sync-alt text-green-600"></i>
+</div>
+<div>
+<h3 class="text-xl font-semibold mb-2">Actualització</h3>
+<p class="text-gray-600">
+Actualitza periòdicament els USB d'arrencada amb les últimes versions de les eines, especialment els antivirus i eines de diagnòstic per ser efectiu amb els últims malware i dispositius.
+</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Peu de pàgina -->
+<footer class="bg-gray-800 text-white py-8">
+<div class="container mx-auto px-4">
+<div class="flex flex-col md:flex-row justify-between items-center">
+<div class="mb-4 md:mb-0">
+<h3 class="text-xl font-bold">USB d'Arrencada</h3>
+<p class="text-gray-400">Tècnics en Sistemes Microinformàtics i Xarxes</p>
+</div>
+<div>
+<p class="text-gray-400 text-sm"></p>
+</div>
+</div>
+</div>
+</footer>
+</body>
+</html>
